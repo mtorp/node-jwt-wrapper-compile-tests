@@ -1,0 +1,66 @@
+{
+  "name": "@vanioinformatika/jwt-wrapper",
+  "version": "2.0.2",
+  "description": "A wrapper around the jsonwebtoken npm module that handles key ids.",
+  "author": "Gyula Szalai <gyszalai@gmail.com>",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Gyula Szalai",
+      "email": "gyszalai@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vanioinformatika/node-jwt-wrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vanioinformatika/node-jwt-wrapper/issues"
+  },
+  "keywords": [
+    "node",
+    "jwt",
+    "jsonwebtoken"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">6.9"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "coverage": "nyc npm run test",
+    "coverage:ci": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
+    "test": "mocha --recursive --compilers ts:ts-node/register src/**/*.spec.ts",
+    "tslint": "tslint --fix src/**/*.ts",
+    "preversion": "git push && npm test",
+    "version": "npm run compile && git add -A dist",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {
+    "base64url": "1.0.6",
+    "debug": "2.6.8",
+    "jsonwebtoken": "7.4.2",
+    "util.promisify": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/base64url": "2.0.3",
+    "@types/debug": "0.0.29",
+    "@types/jsonwebtoken": "7.2.3",
+    "@types/node": "6.0.85",
+    "@types/util.promisify": "1.0.0",
+    "@types/chai": "4.0.2",
+    "@types/chai-as-promised": "0.0.31",
+    "@types/mocha": "2.2.41",
+    "chai": "4.1.1",
+    "chai-as-promised": "7.1.1",
+    "coveralls": "2.13.1",
+    "dirty-chai": "2.0.1",
+    "mocha": "3.5.0",
+    "mocha-junit-reporter": "1.13.0",
+    "nyc": "11.1.0",
+    "ts-node": "3.3.0",
+    "tslint": "5.6.0",
+    "typescript": "2.4.2"
+  }
+}
