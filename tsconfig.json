@@ -21,7 +21,8 @@
     }
   },
   "include": [
-    "index.ts"
+    "index.ts",
+    "**/*.spec.ts"
   ],
   "exclude": [
     "node_modules",
