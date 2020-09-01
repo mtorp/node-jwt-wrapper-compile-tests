@@ -38,7 +38,7 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "base64url": "1.0.6",
+    "base64url": "3.0.0",
     "debug": "2.6.8",
     "jsonwebtoken": "7.4.2",
     "util.promisify": "1.0.0"
